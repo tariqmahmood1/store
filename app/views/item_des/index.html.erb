@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Item Des</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_des.each do |item_de| %>
+      <tr>
+        <td><%= item_de.title %></td>
+        <td><%= item_de.unit %></td>
+        <td><%= link_to 'Show', item_de %></td>
+        <td><%= link_to 'Edit', edit_item_de_path(item_de) %></td>
+        <td><%= link_to 'Destroy', item_de, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item de', new_item_de_path %>
